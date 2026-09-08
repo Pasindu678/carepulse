@@ -15,12 +15,16 @@ export default function App() {
 
   // Check backend connectivity
   useEffect(() => {
-    fetch('/api/health')
-      .then(res => res.json())
-      .then(data => {
+    const checkHealth = async () => {
+      try {
+        const res = await fetch('https://carepulse-87zw.onrender.com/api/health');
+        const data = await res.json();
         if (data?.status === 'ok') setBackendOnline(true);
-      })
-      .catch(() => setBackendOnline(false));
+      } catch (err) {
+        setBackendOnline(false);
+      }
+    };
+    checkHealth();
   }, []);
 
   const handleLoginSuccess = (userData) => {

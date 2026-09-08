@@ -2,7 +2,7 @@
 // Designed to communicate seamlessly with the Express backend on Render
 // or fall back to resilient local state if backend is starting up.
 
-const API_BASE = import.meta.env.VITE_API_URL || '/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://carepulse-87zw.onrender.com/api';
 
 export const localDefaults = {
   user: {

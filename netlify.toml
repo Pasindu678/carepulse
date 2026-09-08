@@ -5,7 +5,7 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "https://carepulse-backend.onrender.com/api/:splat"
+  to = "https://carepulse-87zw.onrender.com/api/:splat"
   status = 200
 
 [[redirects]]
