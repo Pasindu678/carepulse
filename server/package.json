@@ -1,0 +1,21 @@
+{
+  "name": "carepulse-backend",
+  "version": "1.0.0",
+  "description": "CarePulse / CareCircle Eldercare Smart Medicine Wristband API",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["eldercare", "smart-band", "iot", "health", "carepulse"],
+  "author": "Pasindu Induwara",
+  "license": "MIT"
+}

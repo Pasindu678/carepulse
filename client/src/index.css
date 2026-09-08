@@ -1,0 +1,54 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #1E293B;
+  }
+  
+  h1, h2, h3, .font-display {
+    font-family: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom glassmorphic and eldercare aesthetics matching screenshots */
+.care-card {
+  background: #FFFFFF;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 25px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.care-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Sparkline ECG pulse animation */
+@keyframes pulseWave {
+  0% { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.ecg-line {
+  stroke-dasharray: 200;
+  animation: pulseWave 3s ease-in-out infinite;
+}
+
+/* Map grid subtle pattern */
+.map-grid-pattern {
+  background-color: #f1f8f5;
+  background-image: 
+    linear-gradient(45deg, #e3f2ec 25%, transparent 25%, transparent 75%, #e3f2ec 75%, #e3f2ec),
+    linear-gradient(45deg, #e3f2ec 25%, transparent 25%, transparent 75%, #e3f2ec 75%, #e3f2ec);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
