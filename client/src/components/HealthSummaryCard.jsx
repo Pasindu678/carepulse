@@ -5,23 +5,23 @@ export default function HealthSummaryCard() {
   return (
     <div className="space-y-4">
       {/* Chart Card */}
-      <div className="bg-white rounded-3xl p-6 shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-slate-100">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-[0_4px_25px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_25px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 transition-colors">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 bg-slate-900 rounded-sm"></span>
-            <h3 className="text-sm font-bold text-slate-900">Health Summary</h3>
+            <span className="w-2.5 h-2.5 bg-slate-900 dark:bg-white rounded-sm"></span>
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white">Health Summary</h3>
           </div>
-          <span className="text-xs font-semibold text-slate-400">
+          <span className="text-xs font-semibold text-slate-400 dark:text-slate-500">
             Last 7 Days
           </span>
         </div>
 
-        {/* 7-Day SVG Line Chart matching Screenshot 4 */}
+        {/* 7-Day SVG Line Chart */}
         <div className="pt-2">
           <svg className="w-full h-24 overflow-visible" viewBox="0 0 280 80">
             {/* Horizontal Grid lines */}
-            <line x1="0" y1="20" x2="280" y2="20" stroke="#F1F5F9" strokeWidth="1" strokeDasharray="3 3" />
-            <line x1="0" y1="50" x2="280" y2="50" stroke="#F1F5F9" strokeWidth="1" strokeDasharray="3 3" />
+            <line x1="0" y1="20" x2="280" y2="20" stroke="currentColor" className="text-slate-100 dark:text-slate-800" strokeWidth="1" strokeDasharray="3 3" />
+            <line x1="0" y1="50" x2="280" y2="50" stroke="currentColor" className="text-slate-100 dark:text-slate-800" strokeWidth="1" strokeDasharray="3 3" />
             
             {/* Main Trend Line */}
             <path
@@ -48,13 +48,13 @@ export default function HealthSummaryCard() {
                 cx={pt.x}
                 cy={pt.y}
                 r="4"
-                className="fill-white stroke-blue-600 stroke-2 hover:r-6 cursor-pointer transition-all"
+                className="fill-white dark:fill-slate-900 stroke-blue-600 stroke-2 hover:r-6 cursor-pointer transition-all"
               />
             ))}
           </svg>
 
           {/* Day Labels */}
-          <div className="flex justify-between text-[11px] font-medium text-slate-400 mt-2 px-1">
+          <div className="flex justify-between text-[11px] font-medium text-slate-400 dark:text-slate-500 mt-2 px-1">
             <span>Mon</span>
             <span>Tue</span>
             <span>Wed</span>
@@ -67,7 +67,7 @@ export default function HealthSummaryCard() {
       </div>
 
       {/* Affirmation Card underneath */}
-      <div className="rounded-2xl p-4 bg-[#FFF1EE] border border-[#FFE2DC] flex items-center justify-between text-xs font-semibold text-rose-600 shadow-sm">
+      <div className="rounded-2xl p-4 bg-[#FFF1EE] dark:bg-rose-950/20 border border-[#FFE2DC] dark:border-rose-900/30 flex items-center justify-between text-xs font-semibold text-rose-600 dark:text-rose-400 shadow-sm transition-colors">
         <div className="flex items-center gap-2">
           <span>♡</span>
           <span>Your care makes a real difference</span>

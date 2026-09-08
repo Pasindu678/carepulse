@@ -6,6 +6,31 @@ import DashboardView from './pages/DashboardView';
 import { localDefaults } from './services/api';
 
 export default function App() {
+  // Dark mode state with persistence
+  const [darkMode, setDarkMode] = useState(() => {
+    try {
+      const savedTheme = localStorage.getItem('carepulse_theme');
+      if (savedTheme) return savedTheme === 'dark';
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } catch (e) {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      if (darkMode) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('carepulse_theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('carepulse_theme', 'light');
+      }
+    } catch (e) {}
+  }, [darkMode]);
+
+  const toggleDarkMode = () => setDarkMode(prev => !prev);
+
   // Check if session exists in localStorage
   const savedUser = (() => {
     try {
@@ -55,18 +80,20 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8FAFC]">
+    <div className="min-h-screen flex flex-col bg-[#F8FAFC] dark:bg-[#0B0F19] text-slate-800 dark:text-slate-100 transition-colors duration-300">
       
-      {/* Clean Production Navbar (Screen Explorer Removed) */}
+      {/* Production Navbar with Dark Mode Toggle */}
       <Navbar 
         currentView={currentView} 
         setView={setCurrentView}
         user={user}
         onLogout={handleLogout}
         backendOnline={backendOnline}
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
       />
 
-      {/* Dynamic Views based on user state */}
+      {/* Dynamic Views */}
       {!user || currentView === 'login' ? (
         <LoginView 
           onLoginSuccess={handleLoginSuccess}

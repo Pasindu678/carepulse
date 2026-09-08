@@ -3,13 +3,13 @@ import { MapPin } from 'lucide-react';
 
 export default function LocationCard({ onOpenMapModal }) {
   return (
-    <div className="bg-white rounded-3xl p-6 shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-slate-100">
+    <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-[0_4px_25px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_25px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 transition-colors">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
-          <h3 className="text-sm font-bold text-slate-900">Current Location</h3>
+          <h3 className="text-sm font-bold text-slate-900 dark:text-white">Current Location</h3>
         </div>
-        <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
+        <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-xs font-semibold border border-emerald-200 dark:border-emerald-800">
           • Live
         </span>
       </div>
@@ -17,13 +17,13 @@ export default function LocationCard({ onOpenMapModal }) {
       {/* Stylized Map View showing Gampaha, Sri Lanka */}
       <div 
         onClick={onOpenMapModal}
-        className="relative h-44 rounded-2xl overflow-hidden border border-slate-100 cursor-pointer group map-grid-pattern flex items-center justify-center"
+        className="relative h-44 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 cursor-pointer group map-grid-pattern flex items-center justify-center"
       >
         {/* Visual roads lines */}
-        <div className="absolute inset-0 opacity-40">
-          <div className="absolute top-1/2 left-0 right-0 h-2 bg-slate-200 transform -rotate-12"></div>
-          <div className="absolute top-0 bottom-0 left-1/3 w-2 bg-slate-200 transform rotate-6"></div>
-          <div className="absolute top-0 bottom-0 right-1/4 w-3 bg-blue-100/60 transform -rotate-6"></div>
+        <div className="absolute inset-0 opacity-40 dark:opacity-20">
+          <div className="absolute top-1/2 left-0 right-0 h-2 bg-slate-200 dark:bg-slate-700 transform -rotate-12"></div>
+          <div className="absolute top-0 bottom-0 left-1/3 w-2 bg-slate-200 dark:bg-slate-700 transform rotate-6"></div>
+          <div className="absolute top-0 bottom-0 right-1/4 w-3 bg-blue-100/60 dark:bg-blue-900/40 transform -rotate-6"></div>
         </div>
 
         {/* Pulsing Pin Badge */}
@@ -34,23 +34,23 @@ export default function LocationCard({ onOpenMapModal }) {
               <MapPin className="w-5 h-5 fill-white" />
             </div>
           </div>
-          <div className="mt-2 px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-xl shadow-md border border-slate-200/80 text-center">
-            <div className="text-xs font-bold text-slate-900 leading-tight">Home</div>
-            <div className="text-[11px] text-slate-500">Gampaha, Sri Lanka</div>
+          <div className="mt-2 px-3 py-1.5 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-xl shadow-md border border-slate-200/80 dark:border-slate-700 text-center">
+            <div className="text-xs font-bold text-slate-900 dark:text-white leading-tight">Home</div>
+            <div className="text-[11px] text-slate-500 dark:text-slate-400">Gampaha, Sri Lanka</div>
           </div>
         </div>
 
-        <div className="absolute bottom-2 right-2 px-2 py-1 bg-white/80 rounded-md text-[10px] text-slate-400 group-hover:text-blue-600 transition-colors">
+        <div className="absolute bottom-2 right-2 px-2 py-1 bg-white/80 dark:bg-slate-800/80 rounded-md text-[10px] text-slate-400 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           Click to expand
         </div>
       </div>
 
       {/* Card Footer */}
-      <div className="flex items-center justify-between mt-3 text-xs text-slate-400 font-medium pt-1">
+      <div className="flex items-center justify-between mt-3 text-xs text-slate-400 dark:text-slate-500 font-medium pt-1">
         <span>Last Updated 10:24 AM</span>
         <button 
           onClick={onOpenMapModal}
-          className="text-blue-600 font-semibold hover:underline flex items-center gap-1"
+          className="text-blue-600 dark:text-blue-400 font-semibold hover:underline flex items-center gap-1 cursor-pointer"
         >
           <span>View on Map</span>
           <span>→</span>

@@ -6,6 +6,7 @@
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     color: #1E293B;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   h1, h2, h3, .font-display {
@@ -13,12 +14,18 @@
   }
 }
 
-/* Custom glassmorphic and eldercare aesthetics matching screenshots */
+/* Custom glassmorphic and eldercare aesthetics */
 .care-card {
   background: #FFFFFF;
   border-radius: 1.25rem;
   box-shadow: 0 4px 25px rgba(15, 23, 42, 0.04);
   border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .care-card {
+  background: #0F172A;
+  border-color: rgba(51, 65, 85, 0.8);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
 }
 
 .care-badge {
@@ -51,4 +58,11 @@
     linear-gradient(45deg, #e3f2ec 25%, transparent 25%, transparent 75%, #e3f2ec 75%, #e3f2ec);
   background-size: 40px 40px;
   background-position: 0 0, 20px 20px;
+}
+
+.dark .map-grid-pattern {
+  background-color: #0b1324;
+  background-image: 
+    linear-gradient(45deg, #111d38 25%, transparent 25%, transparent 75%, #111d38 75%, #111d38),
+    linear-gradient(45deg, #111d38 25%, transparent 25%, transparent 75%, #111d38 75%, #111d38);
 }

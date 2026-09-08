@@ -6,23 +6,23 @@ export default function VitalsGrid({ vitals }) {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
       
       {/* 1. Heart Rate */}
-      <div className="bg-white rounded-3xl p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col justify-between hover:border-slate-200 transition-all">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_25px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 flex flex-col justify-between hover:border-slate-200 dark:hover:border-slate-700 transition-all">
         <div className="flex items-center justify-between mb-3">
-          <div className="w-9 h-9 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center border border-rose-100">
+          <div className="w-9 h-9 rounded-xl bg-rose-50 dark:bg-rose-950/50 text-rose-500 flex items-center justify-center border border-rose-100 dark:border-rose-900/50">
             <Heart className="w-4 h-4 fill-rose-500/20 text-rose-500" />
           </div>
         </div>
         <div>
-          <span className="text-xs font-medium text-slate-400 block mb-1">
+          <span className="text-xs font-medium text-slate-400 dark:text-slate-400 block mb-1">
             Heart Rate
           </span>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-2xl font-bold text-slate-900">
+            <span className="text-2xl font-bold text-slate-900 dark:text-white">
               {vitals.heartRate.value}
             </span>
-            <span className="text-xs text-slate-400 font-medium">bpm</span>
+            <span className="text-xs text-slate-400 dark:text-slate-400 font-medium">bpm</span>
           </div>
-          <div className="flex items-center gap-1 text-[11px] text-emerald-600 font-semibold mt-1">
+          <div className="flex items-center gap-1 text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
             <span>• {vitals.heartRate.status}</span>
           </div>
         </div>
@@ -42,23 +42,23 @@ export default function VitalsGrid({ vitals }) {
       </div>
 
       {/* 2. Body Temperature */}
-      <div className="bg-white rounded-3xl p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col justify-between hover:border-slate-200 transition-all">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_25px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 flex flex-col justify-between hover:border-slate-200 dark:hover:border-slate-700 transition-all">
         <div className="flex items-center justify-between mb-3">
-          <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-500 flex items-center justify-center border border-blue-100">
+          <div className="w-9 h-9 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-500 flex items-center justify-center border border-blue-100 dark:border-blue-900/50">
             <Thermometer className="w-4 h-4 text-blue-500" />
           </div>
         </div>
         <div>
-          <span className="text-xs font-medium text-slate-400 block mb-1">
+          <span className="text-xs font-medium text-slate-400 dark:text-slate-400 block mb-1">
             Body Temperature
           </span>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-2xl font-bold text-slate-900">
+            <span className="text-2xl font-bold text-slate-900 dark:text-white">
               {vitals.temperature.value}
             </span>
-            <span className="text-xs text-slate-400 font-medium">°C</span>
+            <span className="text-xs text-slate-400 dark:text-slate-400 font-medium">°C</span>
           </div>
-          <div className="flex items-center gap-1 text-[11px] text-emerald-600 font-semibold mt-1">
+          <div className="flex items-center gap-1 text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
             <span>• {vitals.temperature.status}</span>
           </div>
         </div>
@@ -77,23 +77,23 @@ export default function VitalsGrid({ vitals }) {
       </div>
 
       {/* 3. SpO2 (Oxygen) */}
-      <div className="bg-white rounded-3xl p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col justify-between hover:border-slate-200 transition-all">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_25px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 flex flex-col justify-between hover:border-slate-200 dark:hover:border-slate-700 transition-all">
         <div className="flex items-center justify-between mb-3">
-          <div className="w-9 h-9 rounded-xl bg-purple-50 text-purple-500 flex items-center justify-center border border-purple-100">
+          <div className="w-9 h-9 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-500 flex items-center justify-center border border-purple-100 dark:border-purple-900/50">
             <Activity className="w-4 h-4 text-purple-500" />
           </div>
         </div>
         <div>
-          <span className="text-xs font-medium text-slate-400 block mb-1">
+          <span className="text-xs font-medium text-slate-400 dark:text-slate-400 block mb-1">
             SpO2 (Oxygen)
           </span>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-2xl font-bold text-slate-900">
+            <span className="text-2xl font-bold text-slate-900 dark:text-white">
               {vitals.spO2.value}
             </span>
-            <span className="text-xs text-slate-400 font-medium">%</span>
+            <span className="text-xs text-slate-400 dark:text-slate-400 font-medium">%</span>
           </div>
-          <div className="flex items-center gap-1 text-[11px] text-emerald-600 font-semibold mt-1">
+          <div className="flex items-center gap-1 text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
             <span>• {vitals.spO2.status}</span>
           </div>
         </div>
@@ -112,22 +112,22 @@ export default function VitalsGrid({ vitals }) {
       </div>
 
       {/* 4. Steps Today */}
-      <div className="bg-white rounded-3xl p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col justify-between hover:border-slate-200 transition-all">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-5 shadow-[0_4px_25px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_25px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 flex flex-col justify-between hover:border-slate-200 dark:hover:border-slate-700 transition-all">
         <div className="flex items-center justify-between mb-3">
-          <div className="w-9 h-9 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center border border-amber-100">
+          <div className="w-9 h-9 rounded-xl bg-amber-50 dark:bg-amber-950/50 text-amber-500 flex items-center justify-center border border-amber-100 dark:border-amber-900/50">
             <Footprints className="w-4 h-4 text-amber-500" />
           </div>
         </div>
         <div>
-          <span className="text-xs font-medium text-slate-400 block mb-1">
+          <span className="text-xs font-medium text-slate-400 dark:text-slate-400 block mb-1">
             Steps Today
           </span>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-2xl font-bold text-slate-900">
+            <span className="text-2xl font-bold text-slate-900 dark:text-white">
               {vitals.steps.value.toLocaleString()}
             </span>
           </div>
-          <div className="flex items-center gap-1 text-[11px] text-emerald-600 font-semibold mt-1">
+          <div className="flex items-center gap-1 text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
             <span>• {vitals.steps.status}</span>
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function VitalsGrid({ vitals }) {
             <div
               key={i}
               style={{ height: `${h}%` }}
-              className="w-full bg-amber-400 rounded-t-sm"
+              className="w-full bg-amber-400 dark:bg-amber-500 rounded-t-sm"
             />
           ))}
         </div>

@@ -3,10 +3,10 @@ import { Phone, Video, MessageSquare } from 'lucide-react';
 
 export default function QuickContactCard({ onTriggerContact }) {
   return (
-    <div className="bg-white rounded-3xl p-6 shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-slate-100">
+    <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-[0_4px_25px_rgba(0,0,0,0.03)] dark:shadow-[0_4px_25px_rgba(0,0,0,0.3)] border border-slate-100 dark:border-slate-800 transition-colors">
       <div className="flex items-center gap-2 mb-4">
-        <Phone className="w-4 h-4 text-slate-700" />
-        <h3 className="text-sm font-bold text-slate-900">Quick Contact</h3>
+        <Phone className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+        <h3 className="text-sm font-bold text-slate-900 dark:text-white">Quick Contact</h3>
       </div>
 
       <div className="grid grid-cols-3 gap-3">
@@ -19,7 +19,7 @@ export default function QuickContactCard({ onTriggerContact }) {
           <div className="w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/20 transition-all transform active:scale-95">
             <Phone className="w-5 h-5 fill-white" />
           </div>
-          <span className="text-xs font-semibold text-slate-700 group-hover:text-slate-900">
+          <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">
             Call
           </span>
         </button>
@@ -32,7 +32,7 @@ export default function QuickContactCard({ onTriggerContact }) {
           <div className="w-12 h-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center shadow-md shadow-blue-500/20 transition-all transform active:scale-95">
             <Video className="w-5 h-5" />
           </div>
-          <span className="text-xs font-semibold text-slate-700 group-hover:text-slate-900">
+          <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">
             Video Call
           </span>
         </button>
@@ -45,7 +45,7 @@ export default function QuickContactCard({ onTriggerContact }) {
           <div className="w-12 h-12 rounded-full bg-purple-600 hover:bg-purple-700 text-white flex items-center justify-center shadow-md shadow-purple-500/20 transition-all transform active:scale-95">
             <MessageSquare className="w-5 h-5" />
           </div>
-          <span className="text-xs font-semibold text-slate-700 group-hover:text-slate-900">
+          <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white">
             Message
           </span>
         </button>
