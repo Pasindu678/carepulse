@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Shield, User, Lock, Eye, EyeOff, ArrowRight, UserCheck, Sparkles, X, HeartHandshake } from 'lucide-react';
+import { Shield, User, Lock, Eye, EyeOff, X, HeartHandshake } from 'lucide-react';
 import { api } from '../services/api';
 
 export default function LoginView({ onLoginSuccess }) {
-  const [username, setUsername] = useState('pasindu');
-  const [password, setPassword] = useState('carepulse123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -19,47 +19,6 @@ export default function LoginView({ onLoginSuccess }) {
   const [regLoading, setRegLoading] = useState(false);
   const [regError, setRegError] = useState('');
 
-  // Demo accounts
-  const demoAccounts = [
-    {
-      label: "Pasindu Induwara",
-      role: "Son / Family Caregiver",
-      username: "pasindu",
-      password: "carepulse123",
-      elder: "Mrs. Nirmala Perera"
-    },
-    {
-      label: "Dr. Anna Simmons",
-      role: "Registered Nurse",
-      username: "dr.anna",
-      password: "carepulse123",
-      elder: "Robert S."
-    }
-  ];
-
-  const handleSelectDemo = async (demo) => {
-    setUsername(demo.username);
-    setPassword(demo.password);
-    setError('');
-    setLoading(true);
-
-    try {
-      const res = await api.login(demo.username, demo.password);
-      if (res.success) {
-        onLoginSuccess(res.user, res.patient);
-      } else {
-        setError(res.message || 'Login failed');
-      }
-    } catch (err) {
-      onLoginSuccess({
-        username: demo.username,
-        name: demo.label,
-        role: demo.role
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleSubmit = async (e) => {
     e?.preventDefault();
@@ -144,34 +103,6 @@ export default function LoginView({ onLoginSuccess }) {
           <p className="text-xs sm:text-sm text-slate-500 mt-1.5 font-normal">
             Welcome back. Sign in to your family care network.
           </p>
-        </div>
-
-        {/* Demo Accounts Quick Selector */}
-        <div className="mb-6 p-3.5 bg-blue-50/60 border border-blue-100 rounded-2xl">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              1-Click Demo Logins:
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {demoAccounts.map((acc, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => handleSelectDemo(acc)}
-                className="text-left p-2.5 bg-white hover:bg-blue-600 hover:text-white rounded-xl border border-blue-100/80 transition-all group shadow-sm active:scale-95 flex flex-col justify-between"
-              >
-                <div className="text-xs font-bold text-slate-800 group-hover:text-white leading-tight">
-                  {acc.label}
-                </div>
-                <div className="text-[10px] text-slate-400 group-hover:text-blue-100 mt-0.5">
-                  Caring for {acc.elder}
-                </div>
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Login Form */}
