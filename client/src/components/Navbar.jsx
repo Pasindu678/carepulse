@@ -19,12 +19,6 @@ export default function Navbar({
         
         {/* Left Section: Screen Tag & CarePulse Brand */}
         <div className="flex items-center gap-3 sm:gap-4">
-          {/* Tag badge (01 SECURE ACCESS / 02 MEMBER SETUP / 04 EVERYDAY DASHBOARD) */}
-          <div className="inline-flex items-center px-2.5 py-1 rounded-full border border-slate-300 dark:border-slate-700 text-[11px] font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase bg-slate-50/50 dark:bg-slate-800/50">
-            {currentView === 'login' && '01 SECURE ACCESS'}
-            {currentView === 'setup' && '02 MEMBER SETUP'}
-            {currentView === 'dashboard' && '04 EVERYDAY DASHBOARD'}
-          </div>
 
           {/* Logo Brand: Interlocking colored circles + CarePulse + Subtitle */}
           <div 
