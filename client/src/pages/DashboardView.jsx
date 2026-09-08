@@ -135,7 +135,7 @@ export default function DashboardView({ onBackToSetup, patient, setPatient, devi
                 </div>
                 <h4 className="text-lg font-bold text-slate-900">Calling Wristband...</h4>
                 <p className="text-xs text-slate-500">
-                  Connecting high-definition two-way audio to {patient?.name || "Mrs. Nirmala Perera"}'s CareCircle Band.
+                  Connecting high-definition two-way audio to {patient?.name || "Mrs. Nirmala Perera"}'s CarePulse Band Pro.
                 </p>
                 <button
                   onClick={() => setActiveContactModal(null)}

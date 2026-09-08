@@ -71,13 +71,13 @@ export default function SetupView({ onContinueToDashboard, onBackToAccount, pati
       {/* Top Welcome Title */}
       <div className="mb-8 sm:mb-10">
         <span className="text-xs font-bold tracking-widest text-emerald-600 uppercase block mb-2">
-          WELCOME TO THE CIRCLE
+          WELCOME TO CAREPULSE
         </span>
         <h1 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
           Let's set up {fullName.split(' ')[0]}'s care profile.
         </h1>
         <p className="text-sm sm:text-base text-slate-500 mt-2 max-w-2xl font-normal">
-          This information helps CareCircle respond clearly when every second counts.
+          This information helps CarePulse respond clearly when every second counts.
         </p>
       </div>
 
@@ -235,7 +235,7 @@ export default function SetupView({ onContinueToDashboard, onBackToAccount, pati
               Pair via MAC Address / Watch ID
             </h4>
             <p className="text-xs text-slate-500 leading-relaxed">
-              Locate the unique ID on the back of the elderly person's CareCircle monitor watch, then search for it securely.
+              Locate the unique ID on the back of the elderly person's CarePulse monitor watch, then search for it securely.
             </p>
           </div>
 
@@ -267,7 +267,7 @@ export default function SetupView({ onContinueToDashboard, onBackToAccount, pati
             </button>
           </div>
 
-          {/* Device Found Banner - Screenshot 3 */}
+          {/* Device Found Banner */}
           {isDeviceFound ? (
             <div className="mb-3 p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-2xl flex items-start gap-3 animate-in fade-in duration-300">
               <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
@@ -275,7 +275,7 @@ export default function SetupView({ onContinueToDashboard, onBackToAccount, pati
               </div>
               <div className="text-xs">
                 <div className="font-bold text-emerald-900 leading-tight">
-                  Device Found: CareCircle Smart Watch
+                  Device Found: CarePulse Smart Band Pro
                 </div>
                 <div className="text-emerald-700 font-mono mt-0.5">
                   (MAC: {macAddress}) — Connected Successfully!

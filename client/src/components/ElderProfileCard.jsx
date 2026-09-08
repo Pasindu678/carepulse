@@ -39,7 +39,7 @@ export default function ElderProfileCard({ patient, device }) {
         </div>
         <div className="space-y-1">
           <div className="text-xs font-bold text-slate-900 leading-tight">
-            CareCircle Band
+            CarePulse Band Pro
           </div>
           <div className="flex items-center gap-2 text-[11px]">
             <span className="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">
