@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Bell, ShieldCheck, ArrowLeft } from 'lucide-react';
 
 export default function Navbar({ currentView, setView, notificationCount = 2, onBack }) {

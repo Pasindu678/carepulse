@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Watch, AlertTriangle, Pill, Activity, Battery, Sliders, ChevronDown, ChevronUp, Zap } from 'lucide-react';
 import { api } from '../services/api';
 

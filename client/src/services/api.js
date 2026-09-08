@@ -1,4 +1,4 @@
-﻿// CarePulse Eldercare API Client
+// CarePulse Eldercare API Client
 // Designed to communicate seamlessly with the Express backend on Render
 // or fall back to resilient local state if backend is starting up.
 

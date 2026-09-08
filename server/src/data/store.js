@@ -1,4 +1,4 @@
-﻿// In-memory data store for CarePulse / CareCircle Eldercare Monitoring System
+// In-memory data store for CarePulse / CareCircle Eldercare Monitoring System
 class DataStore {
   constructor() {
     this.user = {
