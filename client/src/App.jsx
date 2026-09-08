@@ -17,7 +17,9 @@ export default function App() {
   useEffect(() => {
     const checkHealth = async () => {
       try {
-        const res = await fetch('https://carepulse-87zw.onrender.com/api/health');
+        const rawApi = import.meta.env.VITE_API_URL || 'https://carepulse-87zw.onrender.com/api';
+        const cleanApi = rawApi.replace(/\/+$/, '');
+        const res = await fetch(`${cleanApi}/health`);
         const data = await res.json();
         if (data?.status === 'ok') setBackendOnline(true);
       } catch (err) {
