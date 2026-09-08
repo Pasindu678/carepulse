@@ -10,7 +10,13 @@ const alertsRoutes = require("./routes/alerts");
 const streamRoutes = require("./routes/stream");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+
+// Parse and validate port safely (prevent ERR_SOCKET_BAD_PORT if port > 65535)
+let parsedPort = parseInt(process.env.PORT, 10);
+if (isNaN(parsedPort) || parsedPort < 1 || parsedPort > 65535) {
+  parsedPort = 10000;
+}
+const PORT = parsedPort;
 
 // Enable CORS for Netlify frontend, localhost, and custom domains
 app.use(cors({
